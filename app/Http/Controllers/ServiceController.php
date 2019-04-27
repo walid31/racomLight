@@ -112,8 +112,7 @@ class ServiceController extends Controller
     public function destroy($id)
     {
         $service = Service::find($id);
-        $dsd = $service->featured;
-
+        unlink($service->featured);
         $service->delete();
 
         return redirect()->back();

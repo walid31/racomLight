@@ -31,10 +31,10 @@
                                     <td class="Normal" id="x{{$service->id}}">{{$service->service}}</td>
 									<td class="Grand" id="x{{$service->id}}">{{$service->description}}</td>
                                     <td class="Normal" id="x{{$service->id}}"><img src="http://127.0.0.1:8000/{{$service->featured}}" alt=""></td>
-									<td class="Petit" data-toggle="modal" data-target="#ModalEdit"><img data-toggle="tooltip" data-placement="top" title="Edit" src="{{asset('images/admin/edit.svg')}}" onclick="Recupere('#x{{$service->id}}');" ></td>
-									<td class="Petit" data-toggle="modal" data-target="#ModalDelete"><img data-toggle="tooltip" data-placement="top" title="Delete" src="{{asset('images/admin/delete.svg')}}"></td>
+									<td class="Petit" data-toggle="modal" data-target="#ModalEdit{{$service->id}}"><img data-toggle="tooltip" data-placement="top" title="Edit" src="{{asset('images/admin/edit.svg')}}" onclick="Recupere('#x{{$service->id}}');" ></td>
+									<td class="Petit" data-toggle="modal" data-target="#ModalDelete{{$service->id}}"><img data-toggle="tooltip" data-placement="top" title="Delete" src="{{asset('images/admin/delete.svg')}}"></td>
                                     </tr>
-                                    <div class="modal fade" id="ModalDelete" tabindex="-1" aria-hidden="true">
+                                    <div class="modal fade" id="ModalDelete{{$service->id}}" tabindex="-1" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
@@ -53,7 +53,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="modal fade" id="ModalEdit" tabindex="-1" aria-hidden="true">
+                                        <div class="modal fade" id="ModalEdit{{$service->id}} " tabindex="-1" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
