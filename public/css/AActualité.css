@@ -1,0 +1,45 @@
+.tableFixHead{ 
+  overflow-y: auto;
+  height: 60vh; 
+  margin-top: -5vw;  
+}
+.tableFixHead th{
+  position: sticky;
+  top: 0;
+  background-color: rgb(64, 154, 233);
+  z-index: 1; 
+}
+table {
+ border-collapse: collapse;
+  width: 90%;
+  color: white;
+}
+tr{  background-color: rgba(255,255,255,0.3); 
+}
+h1{
+  display: block;
+  margin:auto;
+  margin-top: 15vh;
+  color: white; 
+}
+button{
+  margin-top: 15vh;
+}
+.Normal{
+  width: 20%;
+  word-break: break-all;
+}
+.Grand{
+  width:100%;
+}
+.Grand img{
+  width: 90%;
+  height:90%
+  border-radius: 50%;
+}
+.Petit img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: white; 
+}

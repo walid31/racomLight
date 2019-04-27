@@ -1,0 +1,16 @@
+h1{
+  display: block;
+  margin:auto;
+  margin-top: 15vh;
+  color: white; 
+}
+label{
+  color:white;
+}
+.edit{
+  display: block;
+  margin:auto; 
+}
+.edit:hover{
+  cursor: pointer;
+}

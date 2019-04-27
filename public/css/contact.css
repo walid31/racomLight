@@ -1,0 +1,33 @@
+body{
+	background-color: rgb(64, 154, 233);
+}
+nav{
+	background-color: rgb(64, 154, 233);
+}
+nav img{
+	width: 5vw;
+	height: 5vw;
+}
+.social-contact img{
+	width: 7vw;
+	height: 7vw;
+	margin-left: 2vw;
+	margin-top: 2vw;
+}
+.infos {
+	display: block;
+	margin:auto;
+	color: white;
+	margin-top: 10vw; 
+}
+.send{
+	display: block;
+	margin:auto;
+	color: white;
+	margin-top: 10vw; 
+}
+form{
+	width: 80%;
+	display: block;
+	margin: auto;
+}
