@@ -89,11 +89,12 @@ class ServiceController extends Controller
     public function update(Request $request, $id)
     {
         $service = Service::find($id);
+        unlink($service->featured);
         
         $feature = $request->Image;
         $feature_new_name = time().$feature->getClientOriginalName();
         $feature->move('uploads/services',$feature_new_name);
-       
+        
         
         $service->service = $request->Nom;
         $service->description = $request->Description;

@@ -35,59 +35,59 @@
 									<td class="Petit" data-toggle="modal" data-target="#ModalDelete{{$service->id}}"><img data-toggle="tooltip" data-placement="top" title="Delete" src="{{asset('images/admin/delete.svg')}}"></td>
                                     </tr>
                                     <div class="modal fade" id="ModalDelete{{$service->id}}" tabindex="-1" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="text-center" >Etes vous sure?</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <form action=" {{route('service.delete',['id'=>$service->id])}} " method="POST">
+                                                    {{ csrf_field() }}
+                                                    <div class="modal-footer ">
+                                                        <button type="button" class="btn btn-danger pull-left "  data-dismiss="modal">Fermer</button>
+                                                        <button type="submit" class="btn btn-primary ">Valider</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        <div class="modal fade" id="ModalEdit{{$service->id}}" tabindex="-1" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="text-center" >Etes vous sure?</h5>
+                                                        <h5 class="text-center" >Modifier le service</h5>
                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>
-                                                    <form action=" {{route('service.delete',['id'=>$service->id])}} " method="POST">
-                                                       {{ csrf_field() }}
-                                                        <div class="modal-footer ">
-                                                            <button type="button" class="btn btn-danger pull-left "  data-dismiss="modal">Fermer</button>
-                                                            <button type="submit" class="btn btn-primary ">Valider</button>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="modal fade" id="ModalEdit{{$service->id}} " tabindex="-1" aria-hidden="true">
-                                                <div class="modal-dialog" role="document">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="text-center" >Modifier le service</h5>
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <form action="{{route('service.update',['id'=>$service->id])}}" method="post" enctype="multipart/form-data">
-                                                                {{ csrf_field() }}
-                                                                <div class="form-group">
-                                                                    <label for="Nom">Nom de service</label>
-                                                                    <input id="EditNom" type="text" class="form-control" name="Nom" value="">
-                                                                </div>
-                                                                <div class="md-form form-group">
-                                                                    <label for="Description">Description</label>
-                                                                      <textarea id="EditDescription" class="md-textarea form-control" rows="3" name="Description" value=""></textarea>
-                                                                </div>
-                                                                <div class="file-field form-group">
-                                                                    <label for="Image">Image :</label>
-                                                                    <img id="EditImage" name="Image" src="">
-                                                                    <input type="file" class="form-control" name="Image">
-                                                                </div>
-                                                                <div class="modal-footer ">
-                                                                    <button type="button" class="btn btn-danger pull-left "  data-dismiss="modal">Fermer</button>
-                                                                    <button type="submit" class="btn btn-primary ">Valider</button>
-                                                                </div>
-                                                            </form>
-                                                        </div>
+                                                    <div class="modal-body">
+                                                        <form action="{{route('service.update',['id'=>$service->id])}}" method="post" enctype="multipart/form-data">
+                                                            {{ csrf_field() }}
+                                                            <div class="form-group">
+                                                                <label for="Nom">Nom de service</label>
+                                                                <input id="EditNom" type="text" class="form-control" name="Nom" value="">
+                                                            </div>
+                                                            <div class="md-form form-group">
+                                                                <label for="Description">Description</label>
+                                                                    <textarea id="EditDescription" class="md-textarea form-control" rows="3" name="Description" value=""></textarea>
+                                                            </div>
+                                                            <div class="file-field form-group">
+                                                                <label for="Image">Image :</label>
+                                                                <img id="EditImage" name="Image" src="">
+                                                                <input type="file" class="form-control" name="Image">
+                                                            </div>
+                                                            <div class="modal-footer ">
+                                                                <button type="button" class="btn btn-danger pull-left "  data-dismiss="modal">Fermer</button>
+                                                                <button type="submit" class="btn btn-primary ">Valider</button>
+                                                            </div>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+                                        </div>
+                                    </div>        
 
                                     @endforeach
                                 
