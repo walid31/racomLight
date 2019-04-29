@@ -25,7 +25,7 @@
                             <h2 class="text-center font-weight-bold">Service</h2>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-4 col-4 option">
-                            <a href="{{asset('AdminAccount/Actualité')}}"><img src="{{asset('images/admin/actualité.svg')}}" ></a>
+                            <a href="{{route('Actuality.index')}}"><img src="{{asset('images/admin/actualité.svg')}}" ></a>
                             <h2 class="text-center font-weight-bold">Actualité</h2>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-4 col-4 option">

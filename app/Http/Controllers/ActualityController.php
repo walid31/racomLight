@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Service;
+use App\Actuality;
 use Illuminate\Http\Request;
-use App\Http\Requests;
 
-class ServiceController extends Controller
+class ActualityController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,7 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        return view('AService')->with('AService',Service::all());
+        return view('AActualité')->with('AActualité',Actuality::all()); 
     }
 
     /**
@@ -24,7 +23,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
@@ -34,27 +33,23 @@ class ServiceController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    { 
-        
-       $this->validate($request,[
-            'Nom' => 'required',
-            'Description' =>'required',
-            'Image' => 'required | image' 
+    {
+        $this->validate($request,[
+            'actuality' => 'required',
+            'featured' => 'required | image'
         ]);
-        
+
         $featured = $request->Image;
+        echo($request);
         $featured_new_name = time().$featured->getClientOriginalName();
-        $featured->move('uploads/services',$featured_new_name);
-        
-        
-        $service = Service::create([
-            'service' => $request->Nom,
-            'description' => $request->Description,
-            'featured' => 'uploads/services/'.$featured_new_name
+        $featured->move('uploads/actualities',$featured_new_name);
+
+        $actuality = Actuality::create([
+            'actuality' => $request->Nom,
+            'featured' => 'uploads/actualities/'.$featured_new_name
         ]);
-        
-        return redirect()->back();
-        
+        /*
+        return redirect()->route('Actuality.index');*/
     }
 
     /**
@@ -88,20 +83,7 @@ class ServiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $service = Service::find($id);
-        unlink($service->featured);
-
-        $feature = $request->Image;
-        $feature_new_name = time().$feature->getClientOriginalName();
-        $feature->move('uploads/services',$feature_new_name);
-        
-        
-        $service->service = $request->Nom;
-        $service->description = $request->Description;
-        $service->featured = 'uploads/services/'.$feature_new_name;
-       
-        $service->save();
-        return redirect()->back();
+        //
     }
 
     /**
@@ -112,10 +94,6 @@ class ServiceController extends Controller
      */
     public function destroy($id)
     {
-        $service = Service::find($id);
-        unlink($service->featured);
-        $service->delete();
-
-        return redirect()->back();
+        //
     }
 }

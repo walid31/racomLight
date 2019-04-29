@@ -19,20 +19,17 @@
 								<tr>
 									<th class="Normal">Actualité</th>
 									<th class="Normal">Image</th>
-									<th class="Petit"></th>
+									<th class="Petit">Supprimer</th>
 								</tr>
 							</thead>
 							<tbody>
+								@foreach ($AActualité as $actuality)
 								<tr>
-									<td class="Normal" id="x1">Concour</td>
-									<td class="Grand" id="x1"><img src="{{asset('images/admin/Promotion.jpg')}}" alt=""></td>
+								<td class="Normal" id="x1">{{$actuality->actuality}}</td>
+									<td class="Grand" id="x1"><img src="http://127.0.0.1:8000/{{$actuality->featured}}" alt=""></td>
 									<td class="Petit" data-toggle="modal" data-target="#ModalDelete"><img data-toggle="tooltip" data-placement="top" title="Delete" src="{{asset('images/admin/delete.svg')}}"></td>
-								</tr>
-								<tr>
-									<td class="Normal" id="x1">Concour</td>
-									<td class="Grand" id="x1"><img src="{{asset('images/admin/Promotion.jpg')}}" alt=""></td>
-									<td class="Petit" data-toggle="modal" data-target="#ModalDelete"><img data-toggle="tooltip" data-placement="top" title="Delete" src="{{asset('images/admin/delete.svg')}}"></td>
-								</tr>
+								</tr>	
+								@endforeach
 							</tbody>
 						</table>
 					</div>			
@@ -67,7 +64,8 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="" method="POST">
+						<form action=" {{route('actuality.add')}} " method="POST" enctype="multipart/form-data">
+							{{ csrf_field() }}
                             <div class="form-group">
                                 <label for="Nom">Nom de l'article</label>
                                 <input type="text" class="form-control" name="Nom">

@@ -18,11 +18,11 @@ Route::get('/', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
-/*
+
 Route::get('/service', function () {
     return view('service');
 }); 
-*/
+
 Route::get('/admin', function () {
     return view('adminindex');
 });
@@ -52,10 +52,17 @@ Route::post('/AdminAccount/AService/Add',[
     'as' => 'service.add'   
 ]);
 
-/*     
-Route::get('/AdminAccount/Actualité', function () {
-    return view('AActualité');
-});
+
+Route::post('/AdminAccount/Actualité/Add',[
+    'uses' => 'ActualityController@store',
+    'as' => 'actuality.add'   
+]);
+
+Route::get('/AdminAccount/Actualité',[
+    'uses'=> 'ActualityController@index',
+    'as' => 'Actuality.index'
+]);
+
 Route::get('/AdminAccount/Promotion', function () {
     return view('APromotion');
 });
@@ -70,7 +77,7 @@ Route::get('/AdminAccount/Entreprise', function () {
 });
 Route::get('/AdminAccount/SocialMedia', function () {
     return view('ASocial Media');
-});*/
+});
 Route::get('/AdminAccount/Profil', function () {
     return view('AProfil');
 });
